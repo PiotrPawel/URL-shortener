@@ -14,8 +14,5 @@ class UserUrl(models.Model):
             self.short_url = generate_short_code()
         super(UserUrl, self).save(*args, **kwargs)
 
-    def get_short_url(self):
-        return f"http://www.shortenlink.com/{self.short_url}"
-
     def get_full_url(self):
-        return f"http://www.shortenlink.com/{self.short_url}"
+        return f"http://www.shorten-your-link.herokuapp.com/{self.short_url}"
