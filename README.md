@@ -4,8 +4,8 @@
 > https://shorten-your-link.herokuapp.com/
 
 ## Main features:
-- anonymous user can paste long URL and generete new link with short code and the end of URL
-- redirect from <domain_name>/<short_code> to the page with original long URL
+- anonymous user can paste long URL and generete new link with a short code at the end of new URL
+- redirect from <domain_name>/<short_code> to the page that original URL was given by the user
 
 ## Technologies involved:
 - Django
