@@ -30,9 +30,8 @@ class HomeView(View):
 
 
 def redirect_view(request, short_url):
-    try:
-        long_url = UserUrl.objects.filter(short_url=short_url)[0]
-        return redirect(long_url.long_url)
-    except:
-        raise Http404('This short URL is not valid!')
-    return redirect('/')
+    qs = UserUrl.objects.filter(short_url=short_url)
+    if qs.count() != 1 and not qs.exists():
+        raise Http404
+    obj = qs.first()
+    return redirect(obj.long_url)
